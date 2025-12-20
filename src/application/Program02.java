@@ -16,12 +16,18 @@ public class Program02 {
         System.out.println(dep);
 
 
-        System.out.println("\n=== Test 02: Seller findByAll ===");
+        System.out.println("\n=== Test 02: Department findByAll ===");
         List<Department> departmentList = departmentDao.findAll();
 
         for (Department departments : departmentList) {
             System.out.println(departments);
         }
+
+        System.out.println("\n=== Test 02: Department INSERT ===");
+        Department newDepartment = new Department(null, "Games");
+        departmentDao.insert(newDepartment);
+
+        System.out.println("Inserted! New id = " + newDepartment.getId());
 
 
     }
