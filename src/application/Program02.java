@@ -14,31 +14,39 @@ public class Program02 {
         Scanner input = new Scanner(System.in);
 
         System.out.println("=== Test 01: Department findByid ===");
-        Department dep = departmentDao.findById(2);
-        System.out.println(dep);
+            Department dep = departmentDao.findById(2);
+            System.out.println(dep);
 
 
         System.out.println("\n=== Test 02: Department findByAll ===");
-        List<Department> departmentList = departmentDao.findAll();
+            List<Department> departmentList = departmentDao.findAll();
 
-        for (Department departments : departmentList) {
-            System.out.println(departments);
-        }
+            for (Department departments : departmentList) {
+                System.out.println(departments);
+            }
 
 
         System.out.println("\n=== Test 03: Department INSERT ===");
-        Department newDepartment = new Department(null, "Games");
-        departmentDao.insert(newDepartment);
-        System.out.println("Inserted! New id = " + newDepartment.getId());
+            Department newDepartment = new Department(null, "Games");
+            departmentDao.insert(newDepartment);
+            System.out.println("Inserted! New id = " + newDepartment.getId());
 
 
         System.out.println("\n==== Test 04: Department UPDATE ====");
-        System.out.print("Enter an ID to update: ");
-        int id = input.nextInt();
+            System.out.print("Enter an ID to update: ");
+            int idToUpdate = input.nextInt();
 
-        Department department = new Department(id, "Processador");
-        departmentDao.update(department);
-        System.out.println("Update completed!");
+            Department department = new Department(idToUpdate, "Processador");
+            departmentDao.update(department);
+            System.out.println("Update completed!");
+
+
+        System.out.println("\n==== Test 04: Department UPDATE ====");
+            System.out.print("Enter ID for delete: ");
+            int idToDelete = input.nextInt();
+
+            departmentDao.deleteById(idToDelete);
+            System.out.println("Delete completed!");
 
 
 
