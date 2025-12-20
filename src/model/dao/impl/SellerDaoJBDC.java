@@ -98,8 +98,6 @@ public class SellerDaoJBDC implements SellerDao {
                     + "WHERE Id = ?");
 
             st.setInt(1, id);
-
-
             int rowsAffected = st.executeUpdate();
 
             if(rowsAffected == 0) {
